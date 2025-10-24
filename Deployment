@@ -1,0 +1,182 @@
+Project Title:
+
+Generic Card Game
+
+Author(s):
+
+Iremide (manager)
+Nick (primary developer)
+AI assistant (supporting code generation and refinement)
+All artwork and visual assets by Nick
+
+Date:
+
+October 24, 2025
+
+1. Overview
+
+Generic Card Game is a single-player, turn-based card battler built using Python and Pygame. The player faces a progressively tougher AI opponent, upgrading their cards and drawing power between rounds through an in-game shop system.
+
+The game’s theme blends chaotic humor and strategy, accompanied by a high-energy soundtrack made up of Ruder Buster by Toby Fox
+
+2. System Requirements
+Hardware Requirements
+
+CPU: 2.0 GHz Dual-Core or higher
+
+RAM: 4 GB minimum
+
+Storage: ~200 MB (including assets and dependencies)
+
+Display: 800x600 minimum resolution
+
+Sound: Required for background music
+
+Software Requirements
+
+Operating System: Windows 10/11, macOS, or Linux
+
+Python Version: 3.10 or newer
+
+Libraries Required:
+
+pygame
+
+os, sys, random (standard Python libraries)
+
+Install dependencies with:
+
+pip install pygame
+
+3. Installation and Setup
+1. Download or Clone Repository
+
+Place all project files in one folder, such as:
+
+GenericCardGame/
+│
+├── main.py
+├── music.mp3
+├── images/
+│   ├── card0.png
+│   ├── card1.png
+│   ├── ...
+│   ├── stonks.png
+│   ├── treyvon.png
+│   ├── vance.png
+│
+└── README.txt
+
+2. Verify Folder Structure
+
+All card and enemy images must be located inside /images.
+
+The background music file (music.mp3) should be in the same directory as main.py.
+
+3. Run the Game
+
+Navigate to the game folder and run:
+
+python main.py
+
+4. Configuration
+Music Integration
+
+The file music.mp3 automatically loops in the background:
+
+pygame.mixer.music.load(music_path)
+pygame.mixer.music.play(-1)
+pygame.mixer.music.set_volume(0.5)
+
+
+Replace "music.mp3" with your own .mp3 file for a custom soundtrack.
+
+Game Settings
+
+All key constants (like screen size, card size, and button dimensions) can be edited at the top of the script:
+
+SCREEN_WIDTH = 800
+SCREEN_HEIGHT = 600
+CARD_WIDTH = 100
+CARD_HEIGHT = 150
+
+5. Deployment Steps
+A. Local Deployment (Development Build)
+
+Ensure pygame is installed and updated.
+
+Test the game by running main.py.
+
+Verify that images and music load correctly.
+
+Adjust performance settings (like frame rate or resolution) if needed.
+
+B. Packaged Distribution (Executable Build)
+
+To distribute the game without requiring Python:
+
+Install PyInstaller:
+
+pip install pyinstaller
+
+
+Create a standalone build:
+
+pyinstaller --onefile --add-data "images;images" --add-data "music.mp3;." main.py
+
+
+The executable will appear under dist/main.exe (Windows) or dist/main (Mac/Linux).
+
+6. User Instructions
+Objective
+
+Defeat AI-controlled enemies in each round using cards from your deck. After winning, spend earned coins in the shop to upgrade your stats or drawing ability.
+
+Controls
+Action	Mouse/Keyboard Input
+Draw a card	Click “Draw Card” button
+Play a card	Click on a card in your hand
+Upgrade stats	Click on stat buttons in the shop
+Confirm purchase	Click “Confirm” in the shop
+Exit game	Close window
+7. Post-Deployment Testing
+Test Category	Description	Status
+Game Launch	Runs without error on startup	✅
+Image Loading	All images render correctly	✅
+Music Playback	Background track loops properly	✅
+Enemy AI	AI performs attacks each round	✅
+Shop System	Coins and upgrades persist correctly	✅
+Extra Draw	Additional card draws occur between rounds without turn loss	✅
+Stability	No crashes during extended play sessions	✅
+8. Known Issues & Future Improvements
+Known Issues
+
+No save/load functionality.
+
+AI logic is basic (attacks first available card).
+
+UI does not scale beyond 800x600 resolution.
+
+Planned Improvements
+
+Card rarity and ability system.
+
+Multiple background tracks.
+
+Optional difficulty settings.
+
+Animated effects and smoother UI transitions.
+
+9. Credits
+Role | Contributor
+Game Design & Direction	| Nick & Iremide
+Programming & Logic	| Nick with AI assistance
+Artwork & Visual Assets	| Nick
+Soundtrack | Toby Fox
+Engine | Pygame (Python)
+10. Licensing
+
+This project is provided for educational and entertainment purposes.
+All AI-generated content (text and code) may be freely used or modified by the creator.
+Images remains property of Nick
+Music remains property of Toby Fox
